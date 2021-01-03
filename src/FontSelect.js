@@ -40,13 +40,13 @@ export default class FontSelect extends Component {
         return (
             <>
                 <p>Font: {this.state.selectedOption}</p>
-                <select name="fonts" onChange={this.optionSelected}>
+                <select name="fonts" value={this.state.selectedOption} onChange={this.optionSelected}>
                     {this.state.options.map((opt) =>
                         <option key={opt} value={opt}>{opt}</option>
                     )}
                 </select>
                 <p style={{ "font-family": this.state.selectedOption}}>{this.state.sampleText}</p>
-                <textarea onChange={this.sampleTextChanged}></textarea>
+                <textarea value={this.state.sampleText} onChange={this.sampleTextChanged}></textarea>
             </>
         );
     }
